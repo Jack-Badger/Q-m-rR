@@ -22,10 +22,11 @@ namespace QÖmürR.QR
         bool Init();
 
         /// <summary>
-        /// Creates the q r.
+        /// Creates the temp q r.
         /// </summary>
-        /// <param name="text">The text.</param>
-        /// <returns>A string containing the temp file path to the image.</returns>
-        string CreateQR(string text);
+        /// <param name="embedText">The embed text.</param>
+        /// <param name="imageFormat">The image format.</param>
+        /// <returns>A string.</returns>
+        string CreateTempQR(string embedText, [MarshalAs(UnmanagedType.I4)] ImageFormat imageFormat);
     }
 }

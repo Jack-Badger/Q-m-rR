@@ -6,12 +6,9 @@ namespace QÖmürR.QR
 {
     using System;
     using System.Drawing;
-    using System.Drawing.Imaging;
     using System.IO;
     using System.Runtime.InteropServices;
     using QRCoder;
-    using QRCoder.Exceptions;
-    using QRCoder.Extensions;
 
     /// <summary>
     /// The q r gen.
@@ -32,7 +29,7 @@ namespace QÖmürR.QR
         }
 
         /// <inheritdoc/>
-        public string CreateQR(string text)
+        public string CreateTempQR(string text, ImageFormat imageFormat)
         {
             try
             {
@@ -44,11 +41,9 @@ namespace QÖmürR.QR
                     QRCode qrCode = new QRCode(qrCodeData);
                     Bitmap qrCodeImage = qrCode.GetGraphic(20);
 
-                    Path.GetRandomFileName();
+                    path = this.tempPath + Path.GetRandomFileName() + '.' + imageFormat.ToString().ToLower();
 
-                    path = this.tempPath + Path.GetRandomFileName() + ".png";
-
-                    qrCodeImage.Save(path, ImageFormat.Png);
+                    qrCodeImage.Save(path, imageFormat.GetSystemDrawingImageFormat());
                 }
 
                 return path;
