@@ -21,6 +21,7 @@ Sub main()
     Debug.Print omQRGen.CreateTempQR("Jpeg", ImageFormat.ImageFormat_Jpeg)
     Debug.Print omQRGen.CreateTempQR("Png", ImageFormat.ImageFormat_Png)
     Debug.Print omQRGen.CreateTempQR("Tiff", ImageFormat.ImageFormat_Tiff)
+        
     Dim userInput As String
     userInput = VBA.InputBox("Please Enter QR Text", "Insert QR Code in Sheet")
 
