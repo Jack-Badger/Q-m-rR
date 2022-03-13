@@ -1,3 +1,4 @@
+'Remember to add Project Reference to your library
 Option Explicit On
 
 Dim swApp As SldWorks.SldWorks
